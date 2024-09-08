@@ -4,6 +4,7 @@ FROM python:3.12.5-alpine3.20
 # Set the working directory inside the container
 WORKDIR /app
 
+
 # Install Poetry
 RUN pip install --no-cache-dir poetry
 
@@ -11,10 +12,16 @@ RUN pip install --no-cache-dir poetry
 COPY . /app
 
 # Install virtual environment,
-RUN python -m venv app-env
+RUN python -m venv app/app-env
 
 # Activate the virtual environment and install dependencies
-RUN /bin/bash -c "source /app/my_custom_env/bin/activate && poetry install
+RUN /app/app-env/Scripts/activate
+
+# Copy pyproject.toml and poetry.lock (if available) to install dependencies first
+COPY pyproject.toml poetry.lock* /app/
+
+# Install project dependencies using Poetry
+RUN poetry install
 
 # Make port 80 available to the world outside this container (optional)
 EXPOSE 80
@@ -24,4 +31,4 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Command to run your Python application
-CMD ["bash"]
+CMD ["/bin/bash"]
