@@ -27,3 +27,9 @@ def main(prompt: str):
 
     # Call the function and print the result
     return ask_llm(prompt)
+
+if __name__ == '__main__':
+    prompt = input('Please input your prompt...')
+
+    message = main(prompt=prompt)
+    print(message)
