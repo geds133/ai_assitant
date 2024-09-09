@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap and Custom CSS -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QzORL5pEJw4HkQZGnF7ODcqKDVEtJgXbZjuxlVe1z72lZlgT7PbLb08U5Tn0FiJk" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
+
+    <title>My Simple Webpage</title>
+
+
+    <!-- Video or gif background -->
+    <video autoplay loop muted id="background-video">
+        <source src="{{ url_for('static', filename='assets/media/cityscape.mp4') }}" type="video/mp4">
+        <!-- Fallback for browsers that don't support video -->
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Content box with header and paragraph -->
+    <div class="content-box">
+        <h1>Welcome to Gerards Hub</h1>
+        <p>Please ask anything.</p>
+    </div>
+
+    <!-- New larger box below -->
+    <div class="large-box">
+        <h1>Second Section</h1>
+        <p>This is a wider box that takes up more horizontal space.</p>
+    </div>
+
+</body>
+</html>
