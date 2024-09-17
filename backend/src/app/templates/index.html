@@ -8,6 +8,8 @@
     <!-- Bootstrap and Custom CSS -->
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QzORL5pEJw4HkQZGnF7ODcqKDVEtJgXbZjuxlVe1z72lZlgT7PbLb08U5Tn0FiJk" crossorigin="anonymous">-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
+</head>
+<body>
 
     <title>My Simple Webpage</title>
 
@@ -22,13 +24,13 @@
     <!-- Content box with header and paragraph -->
     <div class="content-box">
         <h1>Welcome to Gerards Hub</h1>
-        <p>Please ask anything.</p>
-    </div>
+        <h2>Menu</h2>
 
-    <!-- New larger box below -->
-    <div class="large-box">
-        <h1>Second Section</h1>
-        <p>This is a wider box that takes up more horizontal space.</p>
+        <!-- Bullet point list of options -->
+        <ul class="options-list">
+            <li><a href="{{ url_for('main.create_chatbot') }}">Chatbot</a></li>
+
+        </ul>
     </div>
 
 </body>

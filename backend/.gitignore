@@ -1,0 +1,12 @@
+# IDE settings
+.idea/
+.run/
+
+# Caches
+*__pycache__
+
+# Virtual environments 
+.venv/
+
+# Poetry lock file
+poetry.lock

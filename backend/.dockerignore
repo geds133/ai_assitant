@@ -1,5 +1,4 @@
 # Ignore the virtual environment directory
-venv/
 .venv/
 
 # Ignore other temporary or unnecessary files

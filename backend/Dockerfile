@@ -14,14 +14,11 @@ RUN pip install --no-cache-dir poetry
 # Set Poetry to create the virtual environment inside the project directory
 RUN poetry config virtualenvs.in-project true
 
-# Install virtual environment,
-RUN python -m venv app/venv
-
 # Copy pyproject.toml and poetry.lock (if available) to install dependencies first
 COPY pyproject.toml poetry.lock* /app/
 
 # Install dependencies using Poetry and activate environment
-RUN /bin/bash -c "poetry install --no-root"
+RUN poetry install
 
 RUN /bin/bash -c ". .venv/bin/activate"
 
