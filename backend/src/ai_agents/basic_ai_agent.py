@@ -1,6 +1,5 @@
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
-from langchain.chains import SequentialChain
 import argparse
 import os
 from dotenv import load_dotenv
