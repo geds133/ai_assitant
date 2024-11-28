@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask, request, render_template, jsonify
-from src.ai_agents.basic_ai_agent import ask_llm
+from src.agents.ai_interface import ask_llm
 
 bp = Blueprint('main', __name__, url_prefix='', template_folder='templates', static_folder='static', static_url_path='/static')
 
